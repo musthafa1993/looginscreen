@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:xplorify_app/screens/BottomNavBar.dart';
 import 'package:xplorify_app/screens/Home.dart';
 import './login.dart';
+import 'Animated Text.dart';
+import 'HomeScreen.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -19,8 +22,13 @@ class _LoginState extends State<Login> {
             crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-          Spacer(flex: 2,),
-         const Text("LOGIN",style: TextStyle(color: Colors.black,
+         Center(
+           child: Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Image.asset('assets/login.gif' ,height: 300,width: 400,),
+           ),
+         ),
+         const Text("LOGIN",style: TextStyle(color: Colors.blue,
           fontSize: 44,
           fontWeight: FontWeight.bold),
           ),
@@ -50,7 +58,7 @@ class _LoginState extends State<Login> {
         InkWell(
           onTap: (){
             print("hello");
-            Navigator.push(context,MaterialPageRoute(builder: (context) => Home(),));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => HomeScreen(),));
           },
           child: Container(
             height: 60,
@@ -60,7 +68,7 @@ class _LoginState extends State<Login> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Center(child: Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,
-              fontSize: 22),)),
+              fontSize: 22,color: Colors.white),)),
             ),
           ),
         ),
@@ -71,11 +79,17 @@ class _LoginState extends State<Login> {
             Text("dont have an Account?\t",
         style: TextStyle(fontWeight: FontWeight.w500,
                 fontSize: 26,color: Colors.grey),),
-            Text("Sign Up",style: TextStyle(fontWeight: FontWeight.w500,
-            fontSize: 26,color: Colors.blue),),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (builder) =>BottomNavBar()));
+              },
+              child: Text("Sign Up",style: TextStyle(fontWeight: FontWeight.w500,
+              fontSize: 26,color: Colors.blue),),
+            ),
           ],
         )
       ],
+
     ),
         )),);
   }

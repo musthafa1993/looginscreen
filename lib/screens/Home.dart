@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
                    fontWeight: FontWeight.w500,
                    color: Colors.white),),
              subtitle: Text("${mobile_number[index]}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14,color: Colors.white),),
-             trailing: Icon(
+             trailing:  Icon(
                Icons.phone,color: Colors.white,),
            ),
          );
