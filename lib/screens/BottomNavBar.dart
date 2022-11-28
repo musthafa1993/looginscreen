@@ -18,7 +18,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       appBar: AppBar(),
       body: pages[_selectedIndex],
-      bottomNavigationBar:  BottomNavigationBar(items: [
+      bottomNavigationBar:  BottomNavigationBar(
+        items: const[
     BottomNavigationBarItem(
     icon: Icon(Icons.home),label: "Home"),
     BottomNavigationBarItem(

@@ -58,7 +58,7 @@ class _LoginState extends State<Login> {
         InkWell(
           onTap: (){
             print("hello");
-            Navigator.push(context,MaterialPageRoute(builder: (context) => HomeScreen(),));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => BottomNavBar(),));
           },
           child: Container(
             height: 60,
@@ -81,7 +81,7 @@ class _LoginState extends State<Login> {
                 fontSize: 26,color: Colors.grey),),
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (builder) =>BottomNavBar()));
+                Navigator.push(context, MaterialPageRoute(builder: (builder) =>AnimatedTexts()));
               },
               child: Text("Sign Up",style: TextStyle(fontWeight: FontWeight.w500,
               fontSize: 26,color: Colors.blue),),
@@ -89,7 +89,6 @@ class _LoginState extends State<Login> {
           ],
         )
       ],
-
     ),
         )),);
   }

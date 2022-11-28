@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex =0;
+  //int _selectedIndex =0;
   bool isfav = false;
 
   var productDetails = [Product(
@@ -68,10 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(
-          child: GridView.builder(
-            itemCount: productDetails.length,
+       // appBar: AppBar(),
+         body: SafeArea(
+           child: GridView.builder(
+               itemCount: productDetails.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
                   childAspectRatio: 3/4,
@@ -103,26 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-            icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(
-            icon: Icon(
-                Icons.shopping_cart),label: "Cart"),
-        BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
-      ],
-        elevation: 3,
-        type: BottomNavigationBarType.shifting,
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.blue,
-        currentIndex:  _selectedIndex,
-        onTap: (int index){
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        iconSize: 30,
-      ),
+
     );
   }
 }
